@@ -3,12 +3,17 @@
 Escreva um código onde temos uma conta bancaria que possa realizar as seguintes operações:
 
 Consultar saldo OK
+
 consultar cheque especial X 
+
 Depositar dinheiro; OK
+
 Sacar dinheiro; X 
+
 Pagar um boleto. X 
 
-Siga as seguintes regras para implementar
+
+## Siga as seguintes regras para implementar
 
 O o valor do cheque especial é definido no momento da criação da conta, de acordo com o valor depositado na conta em sua criação; OK
 
