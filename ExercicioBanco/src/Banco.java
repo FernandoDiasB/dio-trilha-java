@@ -22,6 +22,7 @@ public class Banco {
     }
 
     public void menu(){
+        System.out.println(" ");
         System.out.println("Digite a opção desejada: ");
         System.out.println("1 - Consultar saldo: ");
         System.out.println("2 - Depositar:");
@@ -29,6 +30,8 @@ public class Banco {
         System.out.println("4 - Pagar boleto: ");
         System.out.println("5 - Verificar cheque especial");
         System.out.println("0 - sair: ");
+        System.out.println(" ");
+
     }
 
     private void executaOpcao(int opcao){
@@ -52,14 +55,18 @@ public class Banco {
 
             case 4:
             System.out.println("Digite o valor do boleto: ");
+            double valorBoleto = scanner.nextDouble();
+            conta.pagarBoleto(valorBoleto);
             break;
 
             case 5:
+            conta.consultarChequeEspecial();
             //todo
             break;
             case 0:
             System.out.println("Encerrando...");
             System.out.println("O krikor tem muitos filhos... ♪♪♪");
+            break;
             
             default:
             System.out.println("Opção inválida, tente novamente!");

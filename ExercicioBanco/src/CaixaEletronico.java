@@ -59,14 +59,47 @@ public class CaixaEletronico {
     }
 
     public void sacar(double valorSaque) {
-        if (valorSaque >= saldo) {
+        if (valorSaque <= saldo) {
             saldo -= valorSaque;
         }else{
             double saldoResto = valorSaque - saldo;
-            
+            if (saldoResto <= getChequeEspecialDisponivel()) {
+                saldo = 0;
+                chequeEspecialUsado += saldoResto;
+                System.out.printf("Saque realizado utilizando o cheque especial no valor de: R$ %.2f\n ", saldoResto);
+                
+            } else {
+                System.out.println("Operação não realizada por falta de saldo");
+                return;
+            }            
         }
-
+        System.out.printf("Saque realizado com sucesso no valor de: R$ %.2f\n", valorSaque);
+        System.out.printf("Seu novo saldo é: R$ %.2f\n", saldo);
     }
+
+    public void pagarBoleto(double valorBoleto) {
+        if (valorBoleto <= saldo) {
+            saldo -= valorBoleto;
+            System.out.printf("Boleto pago com sucesso no valor de: %.2f\n", valorBoleto);
+            System.out.printf("Seu novo saldo é: R$ %.2f\n", saldo);   
+        }else{
+            double diferenca = valorBoleto - saldo;
+            if (diferenca <= getChequeEspecialDisponivel()) {
+                saldo = 0;
+                chequeEspecialUsado += diferenca;
+                System.out.println("Pagamento realizado utilizando cheque especial.");
+            }else{
+                System.out.println("Operação não realizada por falta de saldo");
+            }
+        }
+    }
+
+    public void consultarChequeEspecial(){
+        System.out.printf("Cheque especial disponivel: %.2f\n", getChequeEspecialDisponivel());
+        System.out.printf("Cheque especial usado: %.2f\n", chequeEspecialUsado);
+    }
+
+
 
 
 

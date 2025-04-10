@@ -8,9 +8,9 @@ consultar cheque especial X
 
 Depositar dinheiro; OK
 
-Sacar dinheiro; X 
+Sacar dinheiro; OK
 
-Pagar um boleto. X 
+Pagar um boleto. OK
 
 
 ## Siga as seguintes regras para implementar
