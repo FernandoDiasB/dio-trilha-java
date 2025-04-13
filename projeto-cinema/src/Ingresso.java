@@ -19,7 +19,6 @@ public class Ingresso {
     public String getAudio() {
         return audio;
     }
-
     public double getComprarIngresso(){
         return valor;
     }

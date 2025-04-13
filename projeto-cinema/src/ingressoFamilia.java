@@ -7,7 +7,6 @@ public class ingressoFamilia extends Ingresso {
         this.quantidadePessoas = quantidadePessoas;
     }
 
-    @Override
     public double getComprarIngresso() {
         double total = getValor() * quantidadePessoas;
         if (quantidadePessoas > 3) {

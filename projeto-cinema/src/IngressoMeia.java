@@ -3,7 +3,6 @@ public class IngressoMeia extends Ingresso{
         super(valor, nomeDoFilme, audio);
     }
 
-    @Override
     public double getComprarIngresso(){
         return getValor() / 2;
     }
