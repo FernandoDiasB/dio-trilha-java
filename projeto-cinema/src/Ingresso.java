@@ -27,7 +27,4 @@ public class Ingresso {
         return getValor() / 2;
     }
 
-    public double getComprarIngressoPlanoFamilia(){
-        return getValor() * 0.95;
-    }
 }

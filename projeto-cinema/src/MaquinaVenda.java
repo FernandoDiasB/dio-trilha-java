@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,15 +9,30 @@ public class MaquinaVenda {
 
     public static void finalizarVenda(){
         Scanner scanner = new Scanner(System.in);
+        double quantidadeIngressos = 0;
 
-        System.out.println("Digite a quantidade de ingressos que deseja comprar: ");
-        double qunatidadeIngressos = scanner.nextDouble();
-        scanner.nextLine();
-
+        while (true) {
+            try {
+                System.out.println("Digite a quantidade de ingressos que deseja comprar: ");
+                quantidadeIngressos = scanner.nextDouble();
+                scanner.nextLine();
+                if (quantidadeIngressos <= 0) {
+                    System.out.println("Digite um valor maior que zero.");
+                }else{
+                    break;
+                }
+    
+            } catch (InputMismatchException e) {
+                System.out.println("Entrada inválida, digite apenas numeros!");
+                scanner.nextLine();
+            }
+        }
+        
+        
         List<String> ingressos = new ArrayList<>();
         double valorTotal = 0;
-
-        for (int i = 1 ; i <= qunatidadeIngressos; i++) {
+        
+        for (int i = 1 ; i <= quantidadeIngressos; i++) {
             System.out.printf("Ingresso %d: (i) Inteira ou (m) Meia? ", i);
             String tipoIngresso = scanner.nextLine();
 

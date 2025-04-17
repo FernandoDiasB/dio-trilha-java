@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TotenCinema {
@@ -19,17 +20,21 @@ public class TotenCinema {
             System.out.println((i + 1) + "-" + filmes.get(i));
         }
 
-        int opcaoFilme;
+        int opcaoFilme = 0;
 
-        do {
-            System.out.println("Digite o numero do filme que deseja assitir: ");
-            opcaoFilme = scanner.nextInt();
-            if (opcaoFilme < 1 || opcaoFilme >= filmes.size()) {
-                System.out.println("Digite um valor dentro do intervalo");
-            }
-        } while (opcaoFilme < 1 || opcaoFilme >= filmes.size() + 1);
-        String escolhaDoFilme = filmes.get(opcaoFilme -1);
-
+        try {
+            do {
+                System.out.println("Digite o numero do filme que deseja assitir: ");
+                opcaoFilme = scanner.nextInt();
+                if (opcaoFilme < 1 || opcaoFilme >= filmes.size()) {
+                    System.out.println("Digite um valor dentro do intervalo");
+                }
+            } while (opcaoFilme < 1 || opcaoFilme >= filmes.size() + 1);
+            String escolhaDoFilme = filmes.get(opcaoFilme - 1);
+        } catch (InputMismatchException e) {
+            System.out.println("Entrada inválida, digite apenas numeros!");
+            scanner.nextLine();
+        }
 
         String opcaoTraducao;
         do {
