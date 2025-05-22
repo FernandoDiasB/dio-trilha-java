@@ -1,16 +1,16 @@
+
 public class SingletonLazy {
-private static SingletonLazy instancia;
+    private static SingletonLazy instancia;
 
-private SingletonLazy(){
-    super();
-}
-
-
-public static SingletonLazy getInstancia(){
-    if (instancia == null) {
-        instancia = new SingletonLazy();
+    private SingletonLazy() {
+        super();
     }
-    return instancia;
-}
+
+    public static SingletonLazy getInstancia() {
+        if (instancia == null) {
+            instancia = new SingletonLazy();
+        }
+        return instancia;
+    }
 
 }
