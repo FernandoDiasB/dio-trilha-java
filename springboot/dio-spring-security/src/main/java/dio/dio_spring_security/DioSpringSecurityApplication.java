@@ -9,5 +9,4 @@ public class DioSpringSecurityApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DioSpringSecurityApplication.class, args);
 	}
-
 }
