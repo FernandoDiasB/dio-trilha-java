@@ -35,5 +35,4 @@ public User create(User userToCreate) {
     return userRepository.save(userToCreate);
 }
 
-
 }
